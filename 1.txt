@@ -15,4 +15,5 @@ master aaaaaa
 =======
 
 dev aaaaaaaa
->>>>>>> dev
+
+no--ff dev
