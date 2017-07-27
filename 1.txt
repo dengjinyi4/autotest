@@ -10,4 +10,9 @@
 new dev ddd
 
 
+<<<<<<< HEAD
 master aaaaaa
+=======
+
+dev aaaaaaaa
+>>>>>>> dev
