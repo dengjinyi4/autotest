@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 import requests,urllib,json,hashlib,random,xlrd
+import mydb
 # 模拟投放
 def ad_simulation(host):
     param={'adZoneId':1,'positionId':1,'bidTime':'2017-07-04'}
@@ -45,12 +46,21 @@ def getparam_excel():
         # tmplist.append(tlist)
     print tlist
     return tlist
-
+def getparam_db():
+    testdb=mydb.mydb()
+    tmpsql='SELECT testcasename,param,expect_value,param_type from testcase'
+    print testdb.mydb_select(tmpsql)
+    tmplist=[]
+    for i in testdb.mydb_select(tmpsql):
+        tmplist.append(i)
+    print tmplist
+    return tmplist
 
 if __name__ == '__main__':
     # ad_simulation('123.59.17.85:17200')
     # url='http://apidisplay.adhudong.com/sign.htm?act_id=32&adzoneId=101'
     # actmethod(url)
     getparam_excel()
+
 
     # print r.text
